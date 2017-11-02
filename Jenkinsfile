@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'make'
+                archiveArtifacts artifacts: 'hello', fingerprint: true
             }
         }
         stage('Test') {
