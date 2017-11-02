@@ -7,19 +7,19 @@ CC=gcc $(STD)
 # specify compile flags
 CFLAGS=-Wall -Wextra -pedantic 
 
-all:	hello
+all: hello
 
-hello:	hello.o 
+hello: hello.o 
 	$(CC) $^ -o $@ 
 
 hello.o: hello.c 
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) hello.o 
+	$(RM) hello.o hello
 
-distclean:	clean
-	$(RM) hello
+test: hello
+	python ./test.py
 
-.PHONY:	all clean 
+.PHONY:	all clean test
 
