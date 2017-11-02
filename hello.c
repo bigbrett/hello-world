@@ -1,14 +1,19 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#include "emitter.h"
+#include <stdio.h>
 
 int main(void) {
-	double d;
 
-	srand((unsigned int) time(NULL));
-	d = (double) rand() + M_PI;
-	emit("Hello, World!", d);
+    FILE *fp = fopen("out.txt","w+");
+    if (fp == NULL)
+    {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+    fprintf(fp,"Hello, World!\n");
+    fclose(fp);
+
 	return EXIT_SUCCESS;
 }
 
