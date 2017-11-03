@@ -17,7 +17,7 @@ pipeline {
                 echo "Donezo!"
             }
             success {
-                mail to: s.wright@sarcos.com, subject 'JENKINS PIPELINE IS BAE;
+                mail to: s.wright@sarcos.com, subject 'JENKINS PIPELINE IS BAE';
             }
             failure {
                 mail to: s.wright@sarcos.com, subject 'JENKINS PIPELINE IS SHITE'
